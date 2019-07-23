@@ -3,9 +3,92 @@ import java.util.Scanner;
 /**
  * Je fais de la JavaDoc
  */
-@SuppressWarnings("all")
 public class HelloWorld {
     public static void main(String[] args) {
+//        enVrac();
+//        partie1Exo1();
+//        partie1Exo2();
+//        partie1Exo3();
+//        partie1Exo4();
+    }
+
+    public static void partie1Exo1() {
+        int a;
+        int b;
+        int c;
+
+        a = 5;
+        b = 3;
+        c = a + b;
+        a = 2;
+        c = b - a;
+
+        System.out.println("a vaut " + a + ", b vaut " + b + ", c vaut " + c);
+    }
+
+    public static void partie1Exo2() {
+        int a = 2;
+        int b = 432;
+        int temporaire;
+
+        temporaire = a;
+        a = b;
+        b = temporaire;
+    }
+
+    public static void partie1Exo3() {
+        String a = "423";
+        String b = "12";
+//        String c = a / b; // => Error
+        System.out.println("The operator / is undefined for the argument type(s) java.lang.String, java.lang.String");
+    }
+
+    public static void partie1Exo4() {
+        String a = "423";
+        String b = "12";
+        String c = a + b;
+        System.out.println("a + b = " + c); // 42312
+    }
+
+    public static void partie2Exo1() {
+        float valeur;
+        float valeurDouble;
+
+        valeur = 231f;
+        valeurDouble = valeur * 2;
+
+        System.out.println(valeur);
+        System.out.println(valeurDouble);
+
+        // Affiche 231.0 puis (ligne suivante) 462.0
+    }
+
+    public static void partie2Exo2() {
+        System.out.print("Saisir votre nom : ");
+
+        Scanner scanner = new Scanner(System.in);
+        String nom = scanner.nextLine();
+        scanner.close();
+
+        System.out.println("\nBonjour " + nom);
+    }
+
+    public static void partie3Exo1() {
+        System.out.print("Saisir un nombre : ");
+        Scanner scanner = new Scanner(System.in);
+        float valeur = scanner.nextFloat();
+        scanner.close();
+
+        if (valeur < 0) {
+            System.out.println("Négatif");
+        } else if (valeur == 0) {
+            System.out.println("Nul");
+        } else {
+            System.out.println("Positif");
+        }
+    }
+
+    public static void enVrac() {
         int a = 3;
         int b, c;
 
@@ -16,6 +99,7 @@ public class HelloWorld {
         c = b;
 
         System.out.println(b);
+        System.out.println(c);
 
         // Je commente une ligne.
         /*
