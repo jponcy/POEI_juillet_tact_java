@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import com.tactfactory.example.Voiture;
+
 /**
  * Je fais de la JavaDoc
  */
@@ -22,13 +24,34 @@ public class HelloWorld {
 //        prediction();
 //        max();
 
-        System.out.println(purge("Bonjour", "jour"));
-        System.out.println(purge("J'ai horreur des espaces", " "));
-        System.out.println(purge("Immortel/invincible/nonMutable/brefLeMeilleur", "y"));
+//        System.out.println(purge("Bonjour", "jour"));
+//        System.out.println(purge("J'ai horreur des espaces", " "));
+//        System.out.println(purge("Immortel/invincible/nonMutable/brefLeMeilleur", "y"));
+//
+//        System.out.println(replace("Bonjour", "jour", "soir"));
+//        System.out.println(replace("J'ai horreur des espaces", " ", "_"));
+//        System.out.println(replace("Immortel/invincible/nonMutable/brefLeMeilleur", "y", "impossible"));
 
-        System.out.println(replace("Bonjour", "jour", "soir"));
-        System.out.println(replace("J'ai horreur des espaces", " ", "_"));
-        System.out.println(replace("Immortel/invincible/nonMutable/brefLeMeilleur", "y", "impossible"));
+        Voiture voitures[] = new Voiture[] {
+                new Voiture("Titine", "Mogito"),
+                new Voiture("Tutur", "Mogito"),
+                new Voiture()
+        };
+
+        for (Voiture v : voitures) {
+            v.changerCouleur("rouge pomme fluo");
+            v.afficherNbPortes();
+        }
+
+
+        K7 enMagasin[] = {
+                //     Nom    , Dispo, Total, Prix
+                new K7("Bambi",     2,     7,  3.2)
+        };
+
+        // TODO: Créer la class K7
+        // TODO: Essayer d'en manipuler 1
+        // ...
     }
 
     public static void tableauLength() {
@@ -760,5 +783,20 @@ public class HelloWorld {
 
     public static String purge(String origine, String recherche) {
         return replace(origine, recherche, "");
+    }
+
+    int fact(int n) {
+        int retour;
+
+        if (n == 1) {
+            retour = n;
+        } else {
+            retour = n * fact(n - 1);
+        }
+
+        return retour;
+    }
+    int factTern(int n) {
+        return n == 1 ? 1 : n * factTern(n - 1);
     }
 }
