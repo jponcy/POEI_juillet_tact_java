@@ -21,7 +21,7 @@ public class Voiture {
     }
 
     public void changerCouleur(String nouvelleCouleure) {
-        couleure = nouvelleCouleure;
+        setCouleure(nouvelleCouleure);
     }
 
     public void afficherNbPortes() {
@@ -30,5 +30,13 @@ public class Voiture {
 
     /* package */ int obtenirNbPortes() {
         return nombreDePortes;
+    }
+
+    public String getCouleure() {
+        return couleure;
+    }
+
+    public void setCouleure(String couleure) {
+        this.couleure = couleure;
     }
 }
