@@ -41,7 +41,10 @@
  * <li>se déplacer</li>
  * <li>frapper (dans le vide)</li>
  * <li>se désonnecter</li>
+ * <li>se reposer</li>
  * </ul>
+ * Si l'utilisateur se déplace, il perdra (comme avant) 1 PM par case de
+ * déplacement. S'il frappe, il perds 5PA. S'il se repose, il regagne 1PA + 1PM.
  */
 
 package com.tactfactory.rpg;
