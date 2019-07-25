@@ -12,4 +12,12 @@ public class PlaybleCharacter {
 
     /** The health points. */
     private int hp;
+
+    /** Construct to use to fill all attributes. */
+    public PlaybleCharacter(final String name, final int pa, final int pm, final int hp) {
+        this.name = name;
+        this.pa = pa;
+        this.pm = pm;
+        this.hp = hp;
+    }
 }
