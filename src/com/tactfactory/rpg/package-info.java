@@ -45,6 +45,12 @@
  * </ul>
  * Si l'utilisateur se déplace, il perdra (comme avant) 1 PM par case de
  * déplacement. S'il frappe, il perds 5PA. S'il se repose, il regagne 1PA + 1PM.
+ *
+ * 8) Nous allons maintenant mettre en place un système de combo. Le fait de
+ * faire un combo, va réduire la consomation en PA des coups. La première frappe
+ * coûte 5PA, la deuxième (d'affilé si aucune autre action n'est réalisée entre
+ * deux) coûte 4PA, puis 3PA, puis 2PA. Toutes les attaques suivantes couterons
+ * 2PA.
  */
 
 package com.tactfactory.rpg;
