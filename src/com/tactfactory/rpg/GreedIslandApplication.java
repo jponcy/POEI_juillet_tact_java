@@ -9,9 +9,16 @@ public class GreedIslandApplication {
         final Scanner scanner = new Scanner(System.in);
         final String pseudo = scanner.nextLine();
 
-        final PlaybleCharacter player = new PlaybleCharacter("Gon Freecss", 15, 100, 15000);
+        final PlayableCharacter player = new PlayableCharacter("Gon Freecss", 15, 100, 15000);
 
-        System.out.println(String.format("Bienvenue %s", pseudo));
+        System.out.println(player);
+
+        if (pseudo.equals(player.getName())) {
+            System.out.println("Connexion réussi");
+            System.out.println(String.format("Bienvenue %s", pseudo));
+        } else {
+            System.err.println("Echec de la connexion");
+        }
 
         scanner.close();
     }
