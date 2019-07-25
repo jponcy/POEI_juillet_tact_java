@@ -43,12 +43,6 @@ public class HelloWorld {
             v.afficherNbPortes();
         }
 
-
-        K7 enMagasin[] = {
-                //     Nom    , Dispo, Total, Prix
-                new K7("Bambi",     2,     7,  3.2)
-        };
-
         // TODO: Créer la class K7
         // TODO: Essayer d'en manipuler 1
         // ...

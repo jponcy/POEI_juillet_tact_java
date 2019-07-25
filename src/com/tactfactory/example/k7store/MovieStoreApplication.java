@@ -18,10 +18,10 @@ public class MovieStoreApplication {
 
         switch (scanner.nextInt()) {
         case 1: // Rent.
-            store.printList();
-            System.out.println("Quel film voulez-vous louer ?");
-            // store.startRent(scanner.nextInt());
-            // TODO: Continue.
+            store.startRent();
+            break;
+        case 2: // Return movie.
+            store.stopRent();
             break;
         }
 
