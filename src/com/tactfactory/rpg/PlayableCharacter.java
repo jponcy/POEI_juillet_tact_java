@@ -35,4 +35,34 @@ public class PlayableCharacter {
     public String getName() {
         return this.name;
     }
+
+    /**
+     *
+     * @param caseNb
+     * @return {@code TRUE} is move is success, {@code FALSE} otherwise.
+     */
+    public boolean move(int caseNb) {
+        final boolean result;
+
+        if (caseNb >= 0 && this.hasEnoughPM(caseNb)) {
+            this.pm -= caseNb;
+            result = true;
+        } else {
+            result = false;
+        }
+
+        return result;
+    }
+
+    private boolean hasEnoughPM(final int caseNb) {
+        return this.pm >= caseNb;
+    }
+
+    public int getPM() {
+        return this.pm;
+    }
+
+    public boolean hasPM() {
+        return this.getPM() > 0;
+    }
 }
