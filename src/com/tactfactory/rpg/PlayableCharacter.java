@@ -1,6 +1,8 @@
 package com.tactfactory.rpg;
 
 public class PlayableCharacter {
+    private static final int MIN_ATTACK_COST = 2;
+
     private static final int DEFAULT_ATTACK_COST = 5;
 
     /** The name of character. */
@@ -18,6 +20,8 @@ public class PlayableCharacter {
 
     /** The health points. */
     private int hp;
+
+    private int combo = 0;
 
     /** Construct to use to fill all attributes. */
     public PlayableCharacter(final String name, final int paMax, final int pmMax, final int hp) {
@@ -60,6 +64,8 @@ public class PlayableCharacter {
             result = false;
         }
 
+        this.combo = 0;
+
         return result;
     }
 
@@ -76,14 +82,22 @@ public class PlayableCharacter {
     }
 
     public boolean hasEnoughPaToAttack() {
-        return this.pa >= PlayableCharacter.DEFAULT_ATTACK_COST;
+        return this.pa >= this.computeNextAttackCost();
     }
 
     public void attack() {
-        this.pa -= PlayableCharacter.DEFAULT_ATTACK_COST;
+        this.pa -= this.computeNextAttackCost();
+        ++ this.combo;
+    }
+
+    private int computeNextAttackCost() {
+        // Faire un if serait plus performant, mais cette astuce est souvent utilisee en programmation.
+        return Math.max(PlayableCharacter.MIN_ATTACK_COST, PlayableCharacter.DEFAULT_ATTACK_COST - this.combo);
     }
 
     public void rest() {
+        this.combo = 0;
+
         if (this.pa < this.paMax) {
             ++ this.pa;
         }
