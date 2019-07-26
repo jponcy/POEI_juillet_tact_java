@@ -1,12 +1,18 @@
 package com.tactfactory.rpg;
 
 public class PlayableCharacter {
+    private static final int DEFAULT_ATTACK_COST = 5;
+
     /** The name of character. */
     private String name;
 
+    /** The maximal value of {@link #pa}. */
+    private int paMax;
     /** The points of action. */
     private int pa;
 
+    /** The maximal value of {@link #pm}. */
+    private int pmMax;
     /** The points of move. */
     private int pm;
 
@@ -14,11 +20,14 @@ public class PlayableCharacter {
     private int hp;
 
     /** Construct to use to fill all attributes. */
-    public PlayableCharacter(final String name, final int pa, final int pm, final int hp) {
+    public PlayableCharacter(final String name, final int paMax, final int pmMax, final int hp) {
         this.name = name;
-        this.pa = pa;
-        this.pm = pm;
+        this.paMax = paMax;
+        this.pmMax = pmMax;
         this.hp = hp;
+
+        this.pa = this.paMax;
+        this.pm = this.pmMax;
     }
 
     @Override
@@ -64,5 +73,23 @@ public class PlayableCharacter {
 
     public boolean hasPM() {
         return this.getPM() > 0;
+    }
+
+    public boolean hasEnoughPaToAttack() {
+        return this.pa >= PlayableCharacter.DEFAULT_ATTACK_COST;
+    }
+
+    public void attack() {
+        this.pa -= PlayableCharacter.DEFAULT_ATTACK_COST;
+    }
+
+    public void rest() {
+        if (this.pa < this.paMax) {
+            ++ this.pa;
+        }
+
+        if (this.pm < this.pmMax) {
+            ++ this.pm;
+        }
     }
 }

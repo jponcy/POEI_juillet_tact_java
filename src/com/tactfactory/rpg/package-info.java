@@ -40,7 +40,7 @@
  * <ul>
  * <li>se déplacer</li>
  * <li>frapper (dans le vide)</li>
- * <li>se désonnecter</li>
+ * <li>se déconnecter</li>
  * <li>se reposer</li>
  * </ul>
  * Si l'utilisateur se déplace, il perdra (comme avant) 1 PM par case de
